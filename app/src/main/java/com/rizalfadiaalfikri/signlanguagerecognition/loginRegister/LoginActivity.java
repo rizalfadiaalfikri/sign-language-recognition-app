@@ -9,6 +9,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.rizalfadiaalfikri.signlanguagerecognition.MainActivity;
 import com.rizalfadiaalfikri.signlanguagerecognition.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -23,12 +24,21 @@ public class LoginActivity extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        btn_login = findViewById(R.id.btn_login);
         txt_register = findViewById(R.id.txt_register);
 
         txt_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
